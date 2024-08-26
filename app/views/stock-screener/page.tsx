@@ -3,7 +3,15 @@
 import ChartLayout from "@/components/chart-layout";
 import StockScreener from "@/components/stock-screener";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
+
 export default function Page() {
+    return <Suspense fallback={<div>Loading...</div>}>
+        <Wrapped />
+    </Suspense>
+}
+
+export function Wrapped() {
 
     // getting data_source from query parameters
     const searchParams = useSearchParams()
