@@ -11,7 +11,7 @@ export default function Page() {
     </Suspense>
 }
 
-export function Wrapped() {
+function Wrapped() {
 
     // getting data_source from query parameters
     const searchParams = useSearchParams()
