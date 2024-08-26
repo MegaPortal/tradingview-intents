@@ -1,0 +1,292 @@
+{
+    "name": "TradingView Charts",
+    "description": "Generate TradingView charts.",
+    "intents": [
+        {
+            "name": "generate_etf_heatmap",
+            "description": "Generate a heatmap of ETFs. for example: All US ETFs - AllUSEtf",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "data_source": {
+                        "type": "string",
+                        "description": "The data source of the ETFs. The enums of ETFs are: Australia - AllAUEtf, Canada - AllCAEtf, France - AllFREtf, Germany - AllDEEtf, Hong Kong - AllHKEtf, India - AllINEtf, Israel - AllILEtf, Italy - AllITEtf, Japan - AllJPEtf, Luxembourg - AllLUEtf, Malaysia - AllMYEtf, Netherlands - AllNLEtf, New Zealand - AllNZEtf, Romania - AllROEtf, Singapore - AllSGPEtf, Spain - AllESEtf, Switzerland - AllCHEtf, Taiwan - AllTWEtf, Thailand - AllTHEtf, Turkey - AllTREtf, UAE - AllAEEtf, UK - AllUKEtf, USA - AllUSEtf, Vietnam - AllVNEtf."
+                    }
+                },
+                "required": [
+                    "data_source"
+                ]
+            },
+            "async": true,
+            "link": "/views/etf-heatmap?data_source={data_source}",
+            "example": "/views/etf-heatmap?data_source=AllUSEtf",
+            "preferredSize": {
+                "width": 600,
+                "height": 500
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "string",
+                        "description": "The eft heatmap in text format."
+                    }
+                }
+            }
+        },
+        {
+            "name": "generate_market_heatmap",
+            "description": "Generate a heatmap of markets. for example: S&P/ASX 200 Index - XJO",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "data_source": {
+                        "type": "string",
+                        "description": "The data source of the markets. The enums are: Australia: Hong Kong - AllHK, S&P/ASX 200 Index - ASX200, All Australian companies - AllAU; Brazil: Bovespa Index - IBOV, Brazil 50 Index - IBXL, All Brazilian companies - AllBR; Canada: S&P/TSX Composite Index - TSX, All Canadian companies - AllCA; Chile: S&P IPSA Index - BCSSPIPSA, All Chilean companies - AllCL; Colombia: MSCI COLCAP Index - BVCICAP, All Colombian companies - AllCO; Cyprus: CSE Alternative Market Index - CSECYALTE, CSE Main Market Index - CSECYMAIN, CSE General Index - CSECYGEN, CSE Hotels Index - CSECYHOTEL, FTSE/CySE 20 Index - CSECYFTSE20, All Cyprus companies - AllCY; Denmark: OMX Copenhagen 25 Index - OMXCOPOMXC25, All Danish companies - AllDK; Egypt: EGX 30 Index - EGXEGX30, All Egyptian companies - AllEG; Estonia: OMX Tallinn Gross Index - OMXTSEOMXTGI, All Estonian companies - AllEE; Finland: OMX Helsinki 25 Index - HELSINKI25, All Finnish companies - AllFI; Germany: DAX Index - DAX, MDAX Index - MDAX, SDAX Index - SDAX, TecDAX Index - TECDAX, All German companies - AllDE; Greece: ATHEX Composite Index - ATHEXGD, FTSE/ATHEX Market Index - ATHEXFTSEA, FTSE/ATHEX Mid Cap Index - ATHEXFTSEM, FTSE/ATHEX Large Cap Index - ATHEXFTSE, All Greek companies - AllGRC; Hungary: Budapest Stock Exchange Index - BETBUX, All Hungarian companies - AllHU; Iceland: OMX Iceland 15 Index - OMXICEOMXI15, All Icelandic companies - AllIS; India: S&P BSE Sensex Index - SENSEX, All Indian companies - AllIN; Indonesia: IDX 30 Index - IDX30, All Indonesian companies - AllID; Israel: TA-35 Index - TA35, TA-125 Index - TA125, All Israeli companies - AllIL; Italy: FTSE MIB Index - FTSEMIB, All Italian companies - AllIT; Kuwait: Boursa Kuwait All Share Index - KSEBKA, Boursa Kuwait Main Market 50 Index - KSEBKM50, Boursa Kuwait Main Market Index - KSEBKM, Boursa Kuwait Premier Market Index - KSEBKP, All Kuwaiti companies - AllKW; Latvia: OMX Riga Gross Index - OMXRSEOMXRGI, All Latvian companies - AllLV; Lithuania: OMX Vilnius Gross Index - OMXVSEOMXVGI, All Lithuanian companies - AllLT; Nigeria: NGX 30 Index - NSENGNGX30, All Nigerian companies - AllNGA; Morocco: MASI Index - CSEMAMASI, All Moroccan companies - AllMA; Pakistan: PSX Banking Sector Tradable Index - PSXBKTI, JS Momentum Factor Index - PSXJSMFI, KMI 30 Index - PSXKMI30, PSX-KMI All Share Index - PSXKMIALLSHR, KSE 30 Index - PSXKSE30, KSE 100 Index - PSXKSE100, KSE All Share Index - PSXALLSHR, Meezan Pakistan Index - PSXMZNPI, NBP Pakistan Growth Index - PSXNBPPGI, NIT Pakistan Gateway Index - PSXNITPGI, PSX Oil & Gas Tradable Sector Index - PSXOGTI, UBL Pakistan Enterprise Index - PSXUPP9, All Pakistani companies - AllPK; Poland: WIG20 Index - GPWWIG20, All Polish companies - AllPO; Qatar: QE Index - QSEGNRI, All Qatar companies - AllQA; Romania: Bucharest Exchange Trading Index - BVBBET, All Romanian companies - AllRO; Sweden: OMX Stockholm 30 Index - OMXS30, All Swedish companies - AllSWE; Switzerland: Swiss Market Index - SIXSMI, All Swiss companies - AllCHE; Turkey: BIST 30 Index - BIST30, BIST 100 Index - BIST100, BIST Banks Index - BISTBANK, BIST Electricity Index - BISTELKT, BIST Food Beverage Index - BISTGIDA, BIST Technology Index - BISTTEK, BIST All Shares Index - BISTTUM, All Turkish companies - AllTR; UAE: FTSE ADX 15 Index - ADXFADX15, All UAE companies - AllARE; USA: Nasdaq 100 Index - NASDAQ100, Nasdaq Composite Index - NASDAQCOMPOSITE, Dow Jones Composite Average Index - DJCA, Dow Jones Industrial Average Index - DJDJI, Dow Jones Transportation Average Index - DJDJT, Dow Jones Utility Average Index - DJDJU, KBW NASDAQ Bank Index - NASDAQBKX, Russell 1000 Index - TVCRUI, Russell 2000 Index - TVCRUT, Russell 3000 Index - TVCRUA, S&P 500 Index - SPX500, All US companies - AllUSA."
+                    }
+                },
+                "required": [
+                    "data_source"
+                ]
+            },
+            "async": true,
+            "link": "/views/market-heatmap?data_source={data_source}",
+            "example": "/views/market-heatmap?data_source=XJO",
+            "preferredSize": {
+                "width": 600,
+                "height": 500
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "string",
+                        "description": "The market heatmap in text format."
+                    }
+                }
+            }
+        },
+        {
+            "name": "generate_global_market_overview",
+            "description": "Generate a global market overview worldwide without specific data source.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                },
+                "required": [
+                ]
+            },
+            "async": true,
+            "link": "/views/market-overview",
+            "example": "/views/market-heatmap",
+            "preferredSize": {
+                "width": 600,
+                "height": 500
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "string",
+                        "description": "The market overview in text format."
+                    }
+                }
+            }
+        },
+        {
+            "name": "generate_trending_stocks_of_exchange",
+            "description": "Generate a list of trending stocks of an exchange. for example: USA (US), Argentina (BYMA)",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "exchange": {
+                        "type": "string",
+                        "description": "The exchange symbols. Country name is not valid symbol. The enums are: China - SSE, Brazil - BMFBOVESPA, USA - NASDAQ, NYSE, AMEX, OTC, Argentina - BYMA, Australia - ASX, Austria - VIE, Canada - CSE, NEO, TSX, TSXV, Chile - BCS, Colombia - BVC, Cyprus - CSECY, Czech Republic - PSECZ, Denmark - OMXCOP, Egypt - EGX, Estonia - OMXTSE, Finland - OMXHEX, Germany - BER, DUS, FWB, HAM, HAN, MUN, SWB, TRADEGATE, XETR, Greece - ATHEX, Hungary - BET, Iceland - OMXICE, India - BSE, Indonesia - IDX, Israel - TASE, Italy - EUROTLX, MIL, Kuwait - KSE, Latvia - OMXRSE, Lithuania - OMXVSE, Morocco - CSEMA, Poland - GPW, NEWCONNECT, Qatar - QSE, Russia - ALOR, South Africa - JSE, South Korea - KRX, Sri Lanka - CSELK, Sweden - OMXSTO, Switzerland - BX, SIX, Taiwan - TPEX, Turkey - BIST, UAE - ADX, Vietnam - HNX, UPCOM."
+                    }
+                },
+                "required": [
+                    "exchange"
+                ]
+            },
+            "async": true,
+            "link": "/views/market-trending?exchange={exchange}",
+            "example": "/views/market-trending?exchange=AMEX",
+            "preferredSize": {
+                "width": 600,
+                "height": 500
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "string",
+                        "description": "The market overview in text format."
+                    }
+                }
+            }
+        },
+        {
+            "name": "generate_stock_chart",
+            "description": "Generate a chart of a stock. for example: Apple Inc. - AAPL",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "symbol": {
+                        "type": "string",
+                        "description": "The symbol of the stock. For example: Apple Inc. - AAPL"
+                    },
+                    "comparison": {
+                        "type": "string",
+                        "description": "The symbol of the stock to compare with. For example: Apple Inc. - AAPL. Multiple symbols can be separated by comma. For example: AAPL,MSFT. This field is optional."
+                    }
+                },
+                "required": [
+                    "symbol"
+                ]
+            },
+            "async": true,
+            "link": "/views/stock-chart?symbol={symbol}&comparison={comparison}",
+            "example": "/views/stock-chart?symbol=AAPL",
+            "preferredSize": {
+                "width": 600,
+                "height": 500
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "string",
+                        "description": "The stock chart in text format."
+                    }
+                }
+            }
+        },
+        {
+            "name": "generate_stock_financial_report",
+            "description": "Generate a financial report of a stock. for example: Apple Inc. - AAPL",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "symbol": {
+                        "type": "string",
+                        "description": "The symbol of the stock. For example: Apple Inc. - AAPL"
+                    }
+                },
+                "required": [
+                    "symbol"
+                ]
+            },
+            "async": true,
+            "link": "/views/stock-financials?symbol={symbol}",
+            "example": "/views/stock-financials?symbol=AAPL",
+            "preferredSize": {
+                "width": 600,
+                "height": 500
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "string",
+                        "description": "The stock financial report in text format."
+                    }
+                }
+            }
+        },
+        {
+            "name": "generate_stock_news",
+            "description": "Generate a news of a stock. for example: Apple Inc. - AAPL",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "symbol": {
+                        "type": "string",
+                        "description": "The symbol of the stock. For example: Apple Inc. - AAPL"
+                    }
+                },
+                "required": [
+                    "symbol"
+                ]
+            },
+            "async": true,
+            "link": "/views/stock-news?symbol={symbol}",
+            "example": "/views/stock-news?symbol=AAPL",
+            "preferredSize": {
+                "width": 600,
+                "height": 500
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "string",
+                        "description": "The stock news in text format."
+                    }
+                }
+            }
+        },
+        {
+            "name": "generate_stock_screener",
+            "description": "Generate a stock screener.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "market": {
+                        "type": "string",
+                        "description": "The market symbols. For example: america, brazil, china, crypto, forex."
+                    }
+                },
+                "required": [
+                    "symbol"
+                ]
+            },
+            "async": true,
+            "link": "/views/stock-screener?market={market}",
+            "example": "/views/stock-screener?market=america",
+            "preferredSize": {
+                "width": 600,
+                "height": 500
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "string",
+                        "description": "The stock screener in text format."
+                    }
+                }
+            }
+        },
+        {
+            "name": "generate_trading_calendar",
+            "description": "Generate a trading calendar of a country.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "country_filter": {
+                        "type": "string",
+                        "description": "The country filter of the trading calendar. For example: 'ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu'. Each country is separated by comma. This field is optional."
+                    }
+                },
+                "required": [
+                ]
+            },
+            "async": true,
+            "link": "/views/trading-calendar?country_filter={country_filter}",
+            "example": "/views/trading-calendar",
+            "preferredSize": {
+                "width": 600,
+                "height": 500
+            },
+            "returns": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "string",
+                        "description": "The stock screener in text format."
+                    }
+                }
+            }
+        }
+    ]
+}
