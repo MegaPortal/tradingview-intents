@@ -16,11 +16,13 @@ function Wrapped() {
     // getting data_source from query parameters
     const searchParams = useSearchParams()
     const original = searchParams.get('data_source');
-    const dataSource = original ? original : 'AllUSEtf';
+    const volume = searchParams.get('volume');
+    const dataSource = original && original !== 'undefined' ? original : 'AllUSEtf';
+    const volumeValue = volume && volume !== 'undefined' ? volume : 'aum';
 
     return <ChartLayout>
         <div className="w-[600px] h-[500px]">
-            <EtfHeatMap dataSource={dataSource} />
+            <EtfHeatMap dataSource={dataSource} volume={volumeValue} />
         </div>
     </ChartLayout>
 }

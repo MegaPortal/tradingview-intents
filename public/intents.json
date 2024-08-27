@@ -11,6 +11,10 @@
                     "data_source": {
                         "type": "string",
                         "description": "The data source of the ETFs. The enums of ETFs are: Australia - AllAUEtf, Canada - AllCAEtf, France - AllFREtf, Germany - AllDEEtf, Hong Kong - AllHKEtf, India - AllINEtf, Israel - AllILEtf, Italy - AllITEtf, Japan - AllJPEtf, Luxembourg - AllLUEtf, Malaysia - AllMYEtf, Netherlands - AllNLEtf, New Zealand - AllNZEtf, Romania - AllROEtf, Singapore - AllSGPEtf, Spain - AllESEtf, Switzerland - AllCHEtf, Taiwan - AllTWEtf, Thailand - AllTHEtf, Turkey - AllTREtf, UAE - AllAEEtf, UK - AllUKEtf, USA - AllUSEtf, Vietnam - AllVNEtf."
+                    },
+                    "volume": {
+                        "type": "string",
+                        "description": "The volume of the ETFs. Possible values are: aum - Assets under management (default), volume - Volume for 1 day, volume|60 - Volume for 1 hour, volume|240 - Volume for 4 hours, volume|1W - Volume for 1 week, volume|1M"
                     }
                 },
                 "required": [
@@ -18,8 +22,8 @@
                 ]
             },
             "async": true,
-            "link": "/views/etf-heatmap?data_source={data_source}",
-            "example": "/views/etf-heatmap?data_source=AllUSEtf",
+            "link": "/views/etf-heatmap?data_source={data_source}&volume={volume}",
+            "example": "/views/etf-heatmap?data_source=AllUSEtf&volume=aum",
             "preferredSize": {
                 "width": 600,
                 "height": 500
@@ -36,13 +40,17 @@
         },
         {
             "name": "generate_market_heatmap",
-            "description": "Generate a heatmap of markets. for example: S&P/ASX 200 Index - XJO",
+            "description": "Generate a heatmap of markets. for example: S&P/ASX 200 Index - ASX200",
             "parameters": {
                 "type": "object",
                 "properties": {
                     "data_source": {
                         "type": "string",
                         "description": "The data source of the markets. The enums are: Australia: Hong Kong - AllHK, S&P/ASX 200 Index - ASX200, All Australian companies - AllAU; Brazil: Bovespa Index - IBOV, Brazil 50 Index - IBXL, All Brazilian companies - AllBR; Canada: S&P/TSX Composite Index - TSX, All Canadian companies - AllCA; Chile: S&P IPSA Index - BCSSPIPSA, All Chilean companies - AllCL; Colombia: MSCI COLCAP Index - BVCICAP, All Colombian companies - AllCO; Cyprus: CSE Alternative Market Index - CSECYALTE, CSE Main Market Index - CSECYMAIN, CSE General Index - CSECYGEN, CSE Hotels Index - CSECYHOTEL, FTSE/CySE 20 Index - CSECYFTSE20, All Cyprus companies - AllCY; Denmark: OMX Copenhagen 25 Index - OMXCOPOMXC25, All Danish companies - AllDK; Egypt: EGX 30 Index - EGXEGX30, All Egyptian companies - AllEG; Estonia: OMX Tallinn Gross Index - OMXTSEOMXTGI, All Estonian companies - AllEE; Finland: OMX Helsinki 25 Index - HELSINKI25, All Finnish companies - AllFI; Germany: DAX Index - DAX, MDAX Index - MDAX, SDAX Index - SDAX, TecDAX Index - TECDAX, All German companies - AllDE; Greece: ATHEX Composite Index - ATHEXGD, FTSE/ATHEX Market Index - ATHEXFTSEA, FTSE/ATHEX Mid Cap Index - ATHEXFTSEM, FTSE/ATHEX Large Cap Index - ATHEXFTSE, All Greek companies - AllGRC; Hungary: Budapest Stock Exchange Index - BETBUX, All Hungarian companies - AllHU; Iceland: OMX Iceland 15 Index - OMXICEOMXI15, All Icelandic companies - AllIS; India: S&P BSE Sensex Index - SENSEX, All Indian companies - AllIN; Indonesia: IDX 30 Index - IDX30, All Indonesian companies - AllID; Israel: TA-35 Index - TA35, TA-125 Index - TA125, All Israeli companies - AllIL; Italy: FTSE MIB Index - FTSEMIB, All Italian companies - AllIT; Kuwait: Boursa Kuwait All Share Index - KSEBKA, Boursa Kuwait Main Market 50 Index - KSEBKM50, Boursa Kuwait Main Market Index - KSEBKM, Boursa Kuwait Premier Market Index - KSEBKP, All Kuwaiti companies - AllKW; Latvia: OMX Riga Gross Index - OMXRSEOMXRGI, All Latvian companies - AllLV; Lithuania: OMX Vilnius Gross Index - OMXVSEOMXVGI, All Lithuanian companies - AllLT; Nigeria: NGX 30 Index - NSENGNGX30, All Nigerian companies - AllNGA; Morocco: MASI Index - CSEMAMASI, All Moroccan companies - AllMA; Pakistan: PSX Banking Sector Tradable Index - PSXBKTI, JS Momentum Factor Index - PSXJSMFI, KMI 30 Index - PSXKMI30, PSX-KMI All Share Index - PSXKMIALLSHR, KSE 30 Index - PSXKSE30, KSE 100 Index - PSXKSE100, KSE All Share Index - PSXALLSHR, Meezan Pakistan Index - PSXMZNPI, NBP Pakistan Growth Index - PSXNBPPGI, NIT Pakistan Gateway Index - PSXNITPGI, PSX Oil & Gas Tradable Sector Index - PSXOGTI, UBL Pakistan Enterprise Index - PSXUPP9, All Pakistani companies - AllPK; Poland: WIG20 Index - GPWWIG20, All Polish companies - AllPO; Qatar: QE Index - QSEGNRI, All Qatar companies - AllQA; Romania: Bucharest Exchange Trading Index - BVBBET, All Romanian companies - AllRO; Sweden: OMX Stockholm 30 Index - OMXS30, All Swedish companies - AllSWE; Switzerland: Swiss Market Index - SIXSMI, All Swiss companies - AllCHE; Turkey: BIST 30 Index - BIST30, BIST 100 Index - BIST100, BIST Banks Index - BISTBANK, BIST Electricity Index - BISTELKT, BIST Food Beverage Index - BISTGIDA, BIST Technology Index - BISTTEK, BIST All Shares Index - BISTTUM, All Turkish companies - AllTR; UAE: FTSE ADX 15 Index - ADXFADX15, All UAE companies - AllARE; USA: Nasdaq 100 Index - NASDAQ100, Nasdaq Composite Index - NASDAQCOMPOSITE, Dow Jones Composite Average Index - DJCA, Dow Jones Industrial Average Index - DJDJI, Dow Jones Transportation Average Index - DJDJT, Dow Jones Utility Average Index - DJDJU, KBW NASDAQ Bank Index - NASDAQBKX, Russell 1000 Index - TVCRUI, Russell 2000 Index - TVCRUT, Russell 3000 Index - TVCRUA, S&P 500 Index - SPX500, All US companies - AllUSA."
+                    },
+                    "volume": {
+                        "type": "string",
+                        "description": "The volume of the ETFs. Possible values are: market_cap_basic - Market Cap, volume - Volume for 1 day, volume|60 - Volume for 1 hour, volume|240 - Volume for 4 hours, volume|1W - Volume for 1 week, volume|1M"
                     }
                 },
                 "required": [
@@ -50,8 +58,8 @@
                 ]
             },
             "async": true,
-            "link": "/views/market-heatmap?data_source={data_source}",
-            "example": "/views/market-heatmap?data_source=XJO",
+            "link": "/views/market-heatmap?data_source={data_source}&volume={volume}",
+            "example": "/views/market-heatmap?data_source=ASX200&volume=aum",
             "preferredSize": {
                 "width": 600,
                 "height": 500

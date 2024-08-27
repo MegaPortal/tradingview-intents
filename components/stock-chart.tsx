@@ -32,8 +32,8 @@ export function StockChart({ symbol, comparisonSymbols }: { symbol: string, comp
       hide_side_toolbar: comparisonSymbols.length > 0 ? true : false,
       allow_symbol_change: true,
       compareSymbols: comparisonSymbols,
-      calendar: false,
-      hide_top_toolbar: true,
+      calendar: true,
+      hide_top_toolbar: false,
       support_host: 'https://www.tradingview.com'
     })
 

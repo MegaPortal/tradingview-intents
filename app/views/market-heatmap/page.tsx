@@ -16,11 +16,13 @@ function Wrapped() {
     // getting data_source from query parameters
     const searchParams = useSearchParams()
     const original = searchParams.get('data_source');
-    const dataSource = original ? original : 'AllUS';
+    const volume = searchParams.get('volume');
+    const dataSource = original && original !== 'undefined' ? original : 'AllUS';
+    const volumeValue = volume && volume !== 'undefined' ? volume : 'market_cap_basic';
 
     return <ChartLayout>
         <div className="w-[600px] h-[500px]">
-            <MarketHeatmap dataSource={dataSource} />
+            <MarketHeatmap dataSource={dataSource} volume={volumeValue} />
         </div>
     </ChartLayout>
 }

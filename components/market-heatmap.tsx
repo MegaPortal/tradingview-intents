@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, memo } from 'react'
 
-export function MarketHeatmap({ dataSource }: { dataSource: string }) {
+export function MarketHeatmap({ dataSource, volume }: { dataSource: string, volume: string }) {
   const container = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -17,13 +17,13 @@ export function MarketHeatmap({ dataSource }: { dataSource: string }) {
       exchanges: [],
       dataSource: dataSource,
       grouping: 'sector',
-      blockSize: 'market_cap_basic',
+      blockSize: volume,
       blockColor: 'change',
       locale: 'en',
       symbolUrl: '',
       colorTheme: 'light',
-      hasTopBar: false,
-      isDataSetEnabled: false,
+      hasTopBar: true,
+      isDataSetEnabled: true,
       isZoomEnabled: true,
       hasSymbolTooltip: true,
       isMonoSize: false,

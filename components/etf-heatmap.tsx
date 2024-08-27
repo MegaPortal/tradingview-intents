@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, memo } from 'react'
 
-export function ETFHeatmap({ dataSource }: { dataSource: string }) {
+export function ETFHeatmap({ dataSource, volume }: { dataSource: string, volume: string }) {
     const container = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export function ETFHeatmap({ dataSource }: { dataSource: string }) {
         script.async = true
         script.innerHTML = JSON.stringify({
             dataSource: dataSource,
-            blockSize: 'aum',
+            blockSize: volume,
             blockColor: 'change',
             grouping: 'asset_class',
             locale: 'en',
